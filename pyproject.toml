@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pychkr"
+version = "0.1.1"
+description = "A powerful Python utility for checking port availability, monitoring port status, and diagnosing network services on your local system."
+authors = [{ name = "KidiXDev", email = "kidixdev@logiclab.id" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+dependencies = []
+
+[project.scripts]
+pychkr = "pychkr.main:main"

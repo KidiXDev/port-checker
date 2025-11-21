@@ -12,7 +12,7 @@ from typing import Tuple, List, Optional, Dict
 from datetime import datetime
 
 
-class PortChecker:
+class PortChecker:  
     """Handles port availability checking operations."""
     
     def __init__(self, host: str = "0.0.0.0"):

@@ -1,4 +1,4 @@
-# Port Checker
+# PyChkr
 
 A powerful Python utility for checking port availability, monitoring port status, and diagnosing network services on your local system.
 
@@ -10,31 +10,34 @@ A powerful Python utility for checking port availability, monitoring port status
 - Common service ports quick check
 - Export results to JSON
 - Find available ports automatically
+- Command-line interface with rich output
 
 ## Installation
 
-No external dependencies required! Just Python 3.6+
-
 ```bash
+# Install from PyPI
+pip install pychkr
+
+# Or install from source
 git clone https://github.com/KidiXDev/port-checker.git
 cd port-checker
-chmod +x phck.py
+pip install .
 ```
 
 ## Quick Start
 
 ```bash
 # Find first available port in default range (8000-9000)
-./phck.py
+pychkr
 
 # Check if specific ports are available
-./phck.py --check 80,443,8080
+pychkr --check 80,443,8080
 
 # Scan a range and list all ports
-./phck.py --range 3000-3100 --list
+pychkr --range 3000-3100 --list
 
 # Check common service ports
-./phck.py --common
+pychkr --common
 ```
 
 ## Usage
@@ -44,19 +47,19 @@ chmod +x phck.py
 **Find first available port:**
 
 ```bash
-./phck.py --range 8000-9000
+pychkr --range 8000-9000
 ```
 
 **Check specific ports:**
 
 ```bash
-./phck.py --check 80,443,3306,5432
+pychkr --check 80,443,3306,5432
 ```
 
 **Check port ranges:**
 
 ```bash
-./phck.py --check 8000-8010,9000-9005
+pychkr --check 8000-8010,9000-9005
 ```
 
 ### Scanning & Listing
@@ -64,19 +67,19 @@ chmod +x phck.py
 **List all available and used ports:**
 
 ```bash
-./phck.py --range 3000-3100 --list
+pychkr --range 3000-3100 --list
 ```
 
 **Show detailed information (with service names):**
 
 ```bash
-./phck.py --range 8000-8050 --list --detailed
+pychkr --range 8000-8050 --list --detailed
 ```
 
 **Find multiple available ports:**
 
 ```bash
-./phck.py --range 3000-4000 --count 5
+pychkr --range 3000-4000 --count 5
 ```
 
 ### Common Ports Check
@@ -84,7 +87,7 @@ chmod +x phck.py
 Check standard service ports (HTTP, HTTPS, SSH, MySQL, PostgreSQL, Redis, etc.):
 
 ```bash
-./phck.py --common
+pychkr --common
 ```
 
 ### Monitoring
@@ -93,10 +96,10 @@ Monitor ports for changes over time:
 
 ```bash
 # Monitor ports every 5 seconds for 60 seconds
-./phck.py --monitor 8000,8080,3000
+pychkr --monitor 8000,8080,3000
 
 # Custom interval and duration
-./phck.py --monitor 80,443 --interval 10 --duration 300
+pychkr --monitor 80,443 --interval 10 --duration 300
 ```
 
 ### Export Results
@@ -104,8 +107,8 @@ Monitor ports for changes over time:
 Save scan results to JSON:
 
 ```bash
-./phck.py --range 8000-9000 --list --export results.json
-./phck.py --common --export common-ports.json
+pychkr --range 8000-9000 --list --export results.json
+pychkr --common --export common-ports.json
 ```
 
 ## Options
@@ -129,31 +132,31 @@ Save scan results to JSON:
 **DevOps scenario - Find ports for microservices:**
 
 ```bash
-./phck.py --range 8000-8100 --count 10
+pychkr --range 8000-8100 --count 10
 ```
 
 **Troubleshooting - Check if services are running:**
 
 ```bash
-./phck.py --common --detailed
+pychkr --common --detailed
 ```
 
 **Development - Monitor port during deployment:**
 
 ```bash
-./phck.py --monitor 3000,8080 --interval 5 --duration 120
+pychkr --monitor 3000,8080 --interval 5 --duration 120
 ```
 
 **Security audit - Scan for open ports:**
 
 ```bash
-./phck.py --range 1-1024 --list --detailed --export scan-results.json
+pychkr --range 1-1024 --list --detailed --export scan-results.json
 ```
 
 **Quick check before starting a server:**
 
 ```bash
-./phck.py --check 8000,8080,3000
+pychkr --check 8000,8080,3000
 ```
 
 ## Output Examples
@@ -208,17 +211,40 @@ Port     Service              Status          Listening
 
 ## Requirements
 
-- Python 3.6 or higher
-- No external dependencies
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/KidiXDev/port-checker.git
+   cd port-checker
+   ```
+
+2. Install in development mode:
+
+   ```bash
+   pip install -e .
+   ```
+
+3. Run tests:
+   ```bash
+   python -m unittest discover tests
+   ```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - See [LICENSE](LICENSE) for details.
 
 ## Contributing
 
-Contributions welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Author
+
+KidiXDev - [@KidiXDev](https://github.com/KidiXDev)
 
 ## Support
 
-If you find this tool helpful, please give it a ⭐️ on GitHub!
+If you find this project useful, please consider giving it a ⭐️ on GitHub.
+
+## Version
+
+Current version: 0.1.0
