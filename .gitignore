@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info
+*.class
+*.jar
+*.war
+*.ear
+dist/
+build/
+.tox/
+.eggs/
+.eggs/
+*.eggs/
+.cache/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Virtual environment
+venv//
+.venv/
