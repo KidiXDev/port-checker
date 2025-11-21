@@ -213,7 +213,7 @@ Port     Service              Status          Listening
 
 ## License
 
-MIT License - feel free to use in your projects!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
