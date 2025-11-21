@@ -244,7 +244,3 @@ KidiXDev - [@KidiXDev](https://github.com/KidiXDev)
 ## Support
 
 If you find this project useful, please consider giving it a ⭐️ on GitHub.
-
-## Version
-
-Current version: 0.1.0
